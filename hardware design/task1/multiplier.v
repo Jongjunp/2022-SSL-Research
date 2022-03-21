@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-// Adder
+// Multiplier
 ////////////////////////////////////////////////////////////////////////////////
 
 `timescale 1ns / 1ps 
@@ -11,16 +11,14 @@ module Multiplier
     parameter FRACTIONWIDTH                     = 4
  )
  (
-    //input ports
     input signed wire[WIDTH-1:0]                operand_a,
     input signed wire[WIDTH-1:0]                operand_b,
     //output ports
-    output signed logic[(2*WIDTH)-1:0]                 mul_result
+    output signed logic[WIDTH-1:0]              add_result
  );
 
-    always @ (operand_a, operand_b) begin
-        mul_result = operand_a * operand_b;
+    always @ (*) begin
+        assign add_result = operand_a + operand_b;
     end
-
+    
 endmodule
-

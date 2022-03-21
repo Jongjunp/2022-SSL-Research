@@ -18,8 +18,8 @@ module Adder
     output signed logic[WIDTH-1:0]              add_result
  );
 
-    always @ (operand_a, operand_b) begin
-        add_result = operand_a + operand_b;
+    always @ (*) begin
+        assign add_result = operand_a + operand_b;
     end
     
 endmodule
